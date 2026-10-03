@@ -1,0 +1,44 @@
+- id: SOP-TR-01
+  category: travel
+  severity: moderate
+  description: High probability of precipitation causing travel delays and wet road conditions
+  conditions:
+    all:
+      - field: precipitation_probability
+        operator: gte
+        value: 70.0
+  advice: >
+    Rainfall probability is 70% or greater. Expect road congestion, slick surfaces, and reduced braking efficiency.
+    Allow extra commuting time, carry waterproof gear, and inspect road status before departure.
+  cite_as: "SOP-TR-01 - High rain probability commute and travel warning"
+  situational: false
+
+- id: SOP-TR-02
+  category: travel
+  severity: high
+  description: High crosswinds creating instability for highway or two-wheeler travel
+  conditions:
+    all:
+      - field: wind_speed_10m
+        operator: gte
+        value: 35.0
+  advice: >
+    Wind speeds reach or exceed 35 km/h, elevating crosswind risk on bridges and open corridors.
+    Exercise heightened caution, reduce highway travel speeds, or choose four-wheel or public transit.
+  cite_as: "SOP-TR-02 - Crosswind commute advisory"
+  situational: false
+
+- id: SOP-TR-03
+  category: travel
+  severity: moderate
+  description: Active rain and standing water affecting pedestrian walking commutes
+  conditions:
+    all:
+      - field: precipitation
+        operator: gte
+        value: 3.0
+  advice: >
+    Active measurable rainfall is falling at 3.0 mm/h or more. Sidewalks and road crossings may have puddles and splashing.
+    Wear non-slip waterproof footwear and reflective rain attire for pedestrian safety.
+  cite_as: "SOP-TR-03 - Active rainfall walking commute advisory"
+  situational: false

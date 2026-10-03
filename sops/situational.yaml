@@ -1,0 +1,20 @@
+- id: SOP-SIT-01
+  category: situational
+  severity: critical
+  description: Severe weather alert for active low-pressure storm systems, torrential precipitation, or gale-force winds
+  conditions:
+    any:
+      - field: wind_speed_10m
+        operator: gte
+        value: 60.0
+      - field: precipitation
+        operator: gte
+        value: 20.0
+      - field: precipitation_probability
+        operator: gte
+        value: 95.0
+  advice: >
+    EMERGENCY OVERRIDE: An active severe weather system (cyclonic or extreme low-pressure system with destructive winds and torrential rainfall) is impacting this location.
+    All non-essential outdoor movements, recreation, and commutes should be immediately cancelled or postponed. Seek secure indoor shelter immediately.
+  cite_as: "SOP-SIT-01 - Active severe weather system override"
+  situational: true

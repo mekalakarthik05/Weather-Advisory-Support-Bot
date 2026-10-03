@@ -1,0 +1,68 @@
+- id: SOP-VG-01
+  category: vulnerable_groups
+  severity: high
+  description: High heat conditions posing heat exhaustion risks to children at parks or playgrounds
+  conditions:
+    all:
+      - field: temperature_2m
+        operator: gte
+        value: 35.0
+      - field: person
+        operator: in
+        value: [child, children, toddler, kid, kids, baby]
+  advice: >
+    Outdoor ambient temperature exceeds 35°C, raising significant risk of heat exhaustion, dehydration, and playground surface burns for children.
+    Reschedule playground or park visits to cooler morning or late evening hours, and maintain continuous hydration.
+  cite_as: "SOP-VG-01 - Heat risk for children"
+  situational: false
+
+- id: SOP-VG-02
+  category: vulnerable_groups
+  severity: moderate
+  description: Elevated UV levels requiring sun protection for infants and young children
+  conditions:
+    all:
+      - field: uv_index
+        operator: gte
+        value: 6.0
+      - field: person
+        operator: in
+        value: [child, children, toddler, kid, kids, infant, baby]
+  advice: >
+    UV index is 6.0 or higher. Young children's sensitive skin requires shade, wide-brim hats, and child-safe high-SPF sunscreen.
+    Minimize direct sunlight exposure between 10:00 AM and 4:00 PM.
+  cite_as: "SOP-VG-02 - UV protection for children"
+  situational: false
+
+- id: SOP-VG-03
+  category: vulnerable_groups
+  severity: critical
+  description: Extreme thermal stress warning for elderly individuals
+  conditions:
+    all:
+      - field: temperature_2m
+        operator: gte
+        value: 36.0
+      - field: person
+        operator: in
+        value: [elderly, senior, grandparents, older adult]
+  advice: >
+    Temperatures above 36°C present severe cardiovascular and heat stress risks for seniors.
+    Strongly recommend staying in climate-controlled indoor environments and avoiding unneeded outdoor exertion.
+  cite_as: "SOP-VG-03 - Extreme heat warning for elderly"
+  situational: false
+
+- id: SOP-VG-04
+  category: vulnerable_groups
+  severity: moderate
+  description: Low cold temperature limits for outdoor walks with domestic pets or sensitive individuals
+  conditions:
+    all:
+      - field: temperature_2m
+        operator: lte
+        value: 5.0
+  advice: >
+    Temperatures at or below 5°C pose hypothermia and paw injury risks for pets, as well as joint discomfort for seniors.
+    Keep outdoor pet walks brief, utilize pet booties or coats if applicable, and monitor for shivering.
+  cite_as: "SOP-VG-04 - Cold exposure limits for pets and vulnerable persons"
+  situational: false

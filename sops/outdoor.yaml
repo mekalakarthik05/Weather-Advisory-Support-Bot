@@ -1,0 +1,77 @@
+- id: SOP-EX-01
+  category: outdoor_exercise
+  severity: moderate
+  description: High UV index affecting outdoor exercise or sporting activities
+  conditions:
+    all:
+      - field: uv_index
+        operator: gte
+        value: 8.0
+      - field: activity
+        operator: in
+        value: [running, jogging, exercise, cycling, outdoor sports, walking]
+  advice: >
+    UV index is very high. Avoid unprotected prolonged outdoor exercise during peak hours.
+    Wear broad-spectrum sunscreen, protective clothing, and UV-blocking sunglasses, or shift exercise to early morning or after sunset.
+  cite_as: "SOP-EX-01 - High UV outdoor exercise advisory"
+  situational: false
+
+- id: SOP-EX-02
+  category: outdoor_exercise
+  severity: high
+  description: Strong wind speeds posing safety hazards for cycling or two-wheelers
+  conditions:
+    all:
+      - field: wind_speed_10m
+        operator: gt
+        value: 40.0
+      - field: activity
+        operator: in
+        value: [cycling, bike ride, two_wheeler, scooter, motorcycling]
+  advice: >
+    Treat high wind gusts above 40 km/h as a direct safety hazard for two-wheeled travel.
+    Advise against cycling or two-wheeler travel until winds subside, and suggest using enclosed transport.
+  cite_as: "SOP-EX-02 - Strong wind and two-wheeled activity"
+  situational: false
+
+- id: SOP-EX-03
+  category: outdoor_exercise
+  severity: high
+  description: Heavy precipitation or high probability of rain affecting outdoor exercise
+  conditions:
+    any:
+      - field: precipitation
+        operator: gte
+        value: 5.0
+      - field: precipitation_probability
+        operator: gte
+        value: 80.0
+  advice: >
+    Heavy rain or high probability of downpours creates slippery surfaces and poor visibility.
+    Suspend outdoor workouts or running, and relocate to an indoor gym or indoor exercise space.
+  cite_as: "SOP-EX-03 - Heavy precipitation outdoor exercise safety"
+  situational: false
+
+- id: SOP-EX-04
+  category: outdoor_exercise
+  severity: low
+  description: Favorable mild weather conditions suitable for outdoor workouts
+  conditions:
+    all:
+      - field: temperature_2m
+        operator: gte
+        value: 16.0
+      - field: temperature_2m
+        operator: lte
+        value: 26.0
+      - field: precipitation
+        operator: lte
+        value: 0.5
+      - field: wind_speed_10m
+        operator: lte
+        value: 20.0
+  advice: >
+    Current weather conditions are pleasant and optimal for outdoor exercise and running.
+    Standard hydration is recommended.
+  cite_as: "SOP-EX-04 - Favorable weather outdoor exercise"
+  situational: false

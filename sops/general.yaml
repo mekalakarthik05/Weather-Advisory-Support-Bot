@@ -1,0 +1,17 @@
+- id: SOP-GN-01
+  category: general
+  severity: low
+  description: Multi-factor composite suitability assessment for outdoor picnics and social gatherings
+  conditions:
+    fuzzy_rule: "Comfortable picnic conditions require mild ambient temperatures (approximately 18°C to 28°C), calm to gentle winds (under 25 km/h), minimal precipitation risk (under 30% chance and near 0 mm rain), and non-extreme UV index (under 8)."
+    profile:
+      target_activity: picnic
+      ideal_temp_min: 18.0
+      ideal_temp_max: 28.0
+      max_wind: 25.0
+      max_precip_prob: 30.0
+      max_uv: 8.0
+  advice: >
+    Outdoor picnic conditions are favorable. Mild temperature, gentle breeze, and low precipitation likelihood make today well suited for dining outdoors on a blanket or open lawn.
+  cite_as: "SOP-GN-01 - Outdoor picnic & gathering suitability"
+  situational: false
